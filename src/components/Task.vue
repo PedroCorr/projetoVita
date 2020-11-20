@@ -1,6 +1,6 @@
 <template>
   <div
-    @click="$emit('task-state-changed', task)"
+    @click="emitClick(task)"
     class="task"
     :class="stateClass"
   >
@@ -30,6 +30,9 @@ export default {
     emitEventDelete(task) {
       this.$emit("task-deleted", task);
     },
+    emitClick(task) {
+     this.$emit('task-state-changed', task)
+    }
   },
 };
 </script>
